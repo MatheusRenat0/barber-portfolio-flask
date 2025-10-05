@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Barber GM - Cortes profissionais e estilo único. Agende seu horário!">
+    <meta name="keywords" content="barbearia, corte masculino, barba, cabelo, Santos">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <title>{% block title %}Barber GM{% endblock %}</title>
+</head>
+<body>
+    <header class="navbar">
+        <a href="{{ url_for('index') }}" class="nav-logo">BARBER GM</a>
+        <nav class="nav-links">
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('galeria') }}">Galeria</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+            <a href="{{ url_for('contato') }}">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+   <footer style="background:#111; color:#aaa; text-align:center; padding:20px 0; font-size:0.9rem;">
+     <p>© 2025 <strong>Barber GM</strong>. Todos os direitos reservados.</p>
+     <p>
+         Desenvolvido por 
+    <a href="https://github.com/MatheusRenat0"
+         target="_blank" 
+         style="color:#fff; text-decoration:none; font-weight:500;">
+         Matheus Renato
+        </a>
+     </p>
+    </footer>
+
+
+
+    <a href="https://wa.me/{{ whatsapp }}?text=Olá!%20Gostaria%20de%20agendar%20um%20horário" class="whatsapp-button" target="_blank" title="Agende pelo WhatsApp" aria-label="Contato via WhatsApp">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.826.736 5.59 2.135 8.012L.058 31.67l7.95-2.055A15.904 15.904 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0z" fill="#25D366"/>
+            <path d="M25.387 22.794c-.34.958-1.677 1.76-2.754 1.988-.738.153-1.698.275-4.933-.926-4.137-1.539-6.806-5.773-7.014-6.04-.204-.266-1.673-2.227-1.673-4.249 0-2.021 1.058-3.015 1.433-3.426.376-.411.82-.514 1.094-.514.273 0 .547.003.786.014.251.012.588-.095.92.703.34.815 1.157 2.822 1.258 3.027.102.204.17.443.034.71-.136.264-.204.43-.408.66-.203.232-.428.517-.612.695-.204.204-.417.424-.179.832.238.408.059 1.495 1.517 2.42 1.186.752 2.102 1.012 2.401 1.125.299.114.473.096.647-.057.173-.153.742-.862 1.116-1.156.375-.294.587-.245.987-.147.4.098 2.54 1.198 2.977 1.416.437.218.728.327.833.51.102.183.102 1.056-.238 2.014z" fill="#fff"/>
+        </svg>
+    </a>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

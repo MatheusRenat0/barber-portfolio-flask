@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block title %}Barber Guh - Estilo e Tradição | Cortes Profissionais{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Cortes que definem<br>seu estilo</h1>
+        <p>Agende seu horário e transforme seu visual com técnica, precisão e atendimento diferenciado.</p>
+        <a href="{{ url_for('contato') }}" class="cta-button">Agendar Agora</a>
+    </div>
+</section>
+
+<section class="container welcome-section">
+    <h2>Bem-vindo ao Barber GM</h2>
+    <p>Onde cada corte é uma obra de arte. Nossa paixão é realçar a sua melhor versão com técnica, precisão e um atendimento que faz toda a diferença.</p>
+    
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Agilidade</h3>
+            <p>Atendimento rápido sem perder a qualidade</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Qualidade</h3>
+            <p>Produtos premium e técnicas modernas</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">💯</div>
+            <h3>Satisfação</h3>
+            <p>Seu sorriso é nosso maior objetivo</p>
+        </div>
+    </div>
+</section>
+
+<section class="container gallery-preview">
+    <h2>Confira alguns trabalhos</h2>
+    <p>Inspire-se com nossos cortes e estilos</p>
+    
+    <div class="preview-grid">
+        <img src="static\img\FOTO8.jpg" alt="Trabalho 1">
+        <img src="static\img\FOTO12.jpg" alt="Trabalho 2">
+        <img src="static\img\FOTOEU.jpg" alt="Trabalho 3">
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="{{ url_for('galeria') }}" class="cta-button">Ver Galeria Completa</a>
+    </div>
+</section>
+
+<section class="final-cta">
+    <div class="container">
+        <h2>Pronto para transformar seu visual?</h2>
+        <p>Agende agora mesmo pelo WhatsApp ou preencha nosso formulário</p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/{{ whatsapp }}?text=Olá!%20Gostaria%20de%20agendar%20um%20horário" class="cta-button" target="_blank">
+            WhatsApp
+            </a>
+    </div>
+</section>
+
+<style>
+.welcome-section {
+    padding: 4rem 2rem;
+    background-color: var(--preto);
+    position: relative;
+    z-index: 2;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--cinza-medio);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dourado);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--dourado);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+
+.highlights-section {
+    background: linear-gradient(135deg, var(--cinza-escuro) 0%, var(--cinza-medio) 100%);
+    padding: 5rem 0;
+    margin: 4rem 0;
+}
+
+.highlights-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.highlight-item {
+    text-align: center;
+}
+
+.highlight-number {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-escuro) 100%);
+    color: var(--preto);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.highlight-item h3 {
+    color: var(--dourado);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.gallery-preview {
+    padding: 5rem 2rem;
+    background-color: var(--preto);
+    position: relative;
+    z-index: 2;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.preview-grid img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--dourado);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.preview-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+.final-cta {
+    background: linear-gradient(135deg, var(--preto) 0%, var(--cinza-escuro) 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.final-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: transparent;
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 2px solid var(--dourado);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button-secondary:hover {
+    background: var(--dourado);
+    color: var(--preto);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 768px) {
+    .highlights-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .final-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>
+{% endblock %}
