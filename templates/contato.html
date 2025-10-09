@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block title %}Contato - Barber GM{% endblock %}
+
+{% block content %}
+<section class="container contact-page">
+    
+    <h1>Procuro Modelos para Corte Masculino!</h1>
+    <p>Sou barbeiro iniciante em busca de prática.<br>Só cobro o valor simbólico dos materiais.<br><strong>Se quiser fortalecer e sair na régua, chama no Whatsapp!</strong></p>
+
+    <div class="whatsapp-cta-container">
+        <a href="https://wa.me/{{ whatsapp }}?text=Olá%2C%20Gostaria%20de%20agendar%20um%20horário" class="cta-button" target="_blank">
+            Chamar no WhatsApp
+        </a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        <span class="flash-icon">
+                            {% if category == 'success' %}✓{% else %}⚠{% endif %}
+                        </span>
+                        <span class="flash-text">{{ message }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Outras Redes e Contato</h2>
+            
+            <div class="info-item">
+                <div class="info-icon">📱</div>
+                <div class="info-content">
+                    <h3>WhatsApp</h3>
+                    <p>{{ whatsapp }}</p>
+                    <a href="https://wa.me/{{ whatsapp }}?text=Olá%2C%20Gostaria%20de%20agendar%20um%20horário" target="_blank" class="info-link">
+                        Chamar agora
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Localização</h3>
+                    <p>{{ endereco }}</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📸</div>
+                <div class="info-content">
+                    <h3>Instagram</h3>
+                    <p>{{ instagram }}</p>
+                    <a href="https://instagram.com/{{ instagram.replace('@', '') }}" target="_blank" class="info-link">
+                        Seguir e chamar no Direct
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">⏰</div>
+                <div class="info-content">
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 9h às 19h</p>
+                    <p>Sábado: 9h às 17h</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+
+<style>
+.contact-page {
+    padding: 3rem 2rem 5rem;
+}
+
+.contact-page h1 {
+    margin-bottom: 1rem;
+}
+
+.contact-page > p {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.contact-page > p strong {
+    color: var(--dourado);
+}
+
+/* ESTILO PARA O CONTAINER DO BOTÃO NOVO */
+.whatsapp-cta-container {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ESTILO PARA O BOTÃO NOVO */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-escuro) 100%);
+    color: var(--preto);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+/* Flash Messages */
+.flash-messages {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.flash-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flash-success {
+    background: rgba(34, 197, 94, 0.2);
+    border: 2px solid #22c55e;
+    color: #86efac;
+}
+
+.flash-error {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+    color: #fca5a5;
+}
+
+.flash-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flash-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.contact-info {
+    background: var(--cinza-medio);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    height: fit-content;
+}
+
+.contact-info h2 {
+    color: var(--dourado);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    min-width: 50px;
+}
+
+.info-content h3 {
+    color: var(--dourado);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    text-align: left;
+}
+
+.info-link {
+    display: inline-block;
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.info-link:hover {
+    border-bottom-color: var(--dourado);
+    padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 1.5rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .info-content p {
+        text-align: center;
+    }
+}
+</style>
+{% endblock %}

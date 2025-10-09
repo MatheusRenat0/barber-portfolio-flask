@@ -1,4 +1,3 @@
-// Animação de scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +11,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Destacar link ativo na navbar
+
 const currentLocation = window.location.pathname;
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -23,7 +22,7 @@ navLinks.forEach(link => {
     }
 });
 
-// Animação de fade-in ao scroll
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -38,7 +37,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Aplicar animação aos elementos da galeria
+
 document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-grid img');
     
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 
-    // Validação do formulário de contato
+
     const contactForm = document.querySelector('.contact-form');
     
     if (contactForm) {
@@ -76,28 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 return false;
             }
 
-            // Se chegou aqui, mostra mensagem de sucesso
+           
             alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
         });
     }
 });
 
-// Função para validar e-mail
+
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-// Efeito parallax suave no hero - REMOVIDO para evitar bugs de sobreposição
-// window.addEventListener('scroll', () => {
-//     const hero = document.querySelector('.hero');
-//     if (hero) {
-//         const scrolled = window.pageYOffset;
-//         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-//     }
-// });
-
-// Adicionar classe ao navbar ao scroll
 let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -113,7 +102,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Lightbox simples para galeria (clique para ampliar)
 document.addEventListener('DOMContentLoaded', () => {
     const galleryImages = document.querySelectorAll('.gallery-grid img');
     
@@ -154,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.appendChild(enlargedImg);
             document.body.appendChild(overlay);
 
-            // Fechar ao clicar
             overlay.addEventListener('click', () => {
                 overlay.style.animation = 'fadeOut 0.3s ease';
                 setTimeout(() => overlay.remove(), 300);
@@ -163,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Adicionar animações CSS dinamicamente
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeIn {

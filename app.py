@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'sua_chave_secreta_aqui_mude_isso'  
+app.secret_key = 'barber_secret_key'  
 
 @app.route('/')
 def index():
