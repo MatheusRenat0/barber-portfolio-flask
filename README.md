@@ -4,6 +4,9 @@ Portfólio profissional desenvolvido para um barbeiro, com o objetivo de apresen
 
 O projeto foi construído com **Flask**, **HTML**, **CSS** e **JavaScript**, focando em um design limpo, responsivo e fácil de navegar.
 
+🔗 **Acesse o portfólio online:**  
+👉 [barber-gm.vercel.app](https://barber-gm.vercel.app/)
+
 ---
 
 ## Tecnologias utilizadas
@@ -23,8 +26,6 @@ O projeto foi construído com **Flask**, **HTML**, **CSS** e **JavaScript**, foc
 - Galeria de cortes e estilos
 
 - Página "Sobre" com informações do barbeiro
-
-- Lista de serviços e valores
 
 - Formulário de contato funcional
 
